@@ -1,12 +1,12 @@
 body {
     color: black;
     background-color:whitesmoke;
-    margin: 0 50px 30px 50px;
+    margin: 20px;
 }
 .container {
+    position: relative;
     background-color: #ffffff;
     padding-top: 20px;
-    margin: 20px;
 }
 h1 {
     text-align: center;
@@ -47,14 +47,17 @@ textarea {
     background-color: crimson;
     color: #ffffff;
     padding: 10px;
+    border-radius: 20px;
 }
 
 #copy {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #cccccc;
     color: #ffffff;
-    margin-left: 80px;
+    margin-left: 47%;
     padding: 10px;
+    border-radius: 20px;
+    position: absolute;
 }
 #characters {
     margin: 20px;
@@ -62,4 +65,10 @@ textarea {
 }
 #length {
     width: 50px;
+}
+
+@media (max-width: 767px ) {
+	#copy {
+        margin: 0px;
+    }
 }

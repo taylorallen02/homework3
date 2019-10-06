@@ -4,8 +4,8 @@ var sym = "!@#$%^&*()_+=-';:/?.>,<\|";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 var charNum = document.getElementById("charNum");
-var symBox = document.getElementById("sym");
-var numBox = document.getElementById("num");
+var symbols = document.getElementById("sym");
+var numbers = document.getElementById("num");
 var upperBox = document.getElementById("upper");
 var submit = document.getElementById("submit");
 var newPwd = document.getElementById("newPwd");
@@ -13,8 +13,8 @@ var newPwd = document.getElementById("newPwd");
 
 submit.addEventListener("click",function(e){
     var characters = char;
-    (numBox.checked) ? characters += num : '';
-    (symBox.checked) ? characters += sym : '';
+    (numbers.checked) ? characters += num : '';
+    (symbols.checked) ? characters += sym : '';
     (upperBox.checked) ? characters += upper : '';
     newPwd.value = password(charNum.value, characters);
 });
@@ -25,4 +25,11 @@ function password(l,characters){
         pwd += characters.charAt(Math.floor(Math.random() * characters.length))
     }
     return pwd;
+}
+
+function myFunction(){
+    var copyClipboard = document.getElementById("newPwd");
+    copyClipboard.select();
+    copyClipboard.setSelectionRange(0, 128);
+    document.execCommand("copy");
 }
